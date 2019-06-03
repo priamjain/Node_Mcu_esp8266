@@ -1,6 +1,8 @@
-
+#include <FirebaseError.h>
 #include <FirebaseArduino.h>
-
+#include <FirebaseCloudMessaging.h>
+#include <FirebaseHttpClient.h>
+#include <FirebaseObject.h>
 #include <Firebase.h>
 
 #include <ESP8266WiFi.h>;
@@ -39,7 +41,6 @@ const char MAIN_page[] PROGMEM = R"=====(
 
  
 ESP8266WebServer server(80);
- 
 void handleRoot() {
  String s = MAIN_page; 
  server.send(200, "text/html", s);
@@ -56,7 +57,7 @@ void handleForm() {
   Serial.print("Model Number:");
  Serial.println(m_no);
  
- String s = "<a href='/'> Go Back </a>";
+ String s = "<a href=/> Go Back </a>";
  server.send(200, "text/html", s); 
   WiFi.begin(ID, Password); 
    
