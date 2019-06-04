@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+ 
+<head>
+    <title>"Web App"</title>
+</head>
+<body>
+
+  <div class="mainDiv" align="left">
+      <h1 align="left">"Firebase web page"</h1>
+      <textarea id="model" placeholder="Enter Model Number" stClyle="text-align:left; overflow:auto; border:6px outset #000000;"></textarea>
+      <button id="Submit" onclick="OFF()">OFF!</button>
+      <button id="Submit" onclick="ON()">ON!</button>
+  </div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    
+    apiKey: "AIzaSyBSiCz25QXE2I00o0ZyMutjpSMUUiztPQc",
+    authDomain: "led-blink-0909.firebaseapp.com",
+    databaseURL: "https://led-blink-0909.firebaseio.com",
+    projectId: "led-blink-0909",
+    storageBucket: "led-blink-0909.appspot.com",
+    messagingSenderId: "201604164639",
+    appId: "1:201604164639:web:c891b21ce16ea5b8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var modelno = document.getElementById("model")
+  function OFF()
+  {
+    var mdl = modelno.value;
+    firebase.database().ref().child(mdl).set("OFF");
+    //  window.alert(firebase.database());
+  }
+  function ON()
+  {
+    var mdl = modelno.value;
+    firebase.database().ref().child(mdl).set("ON");
+    //  window.alert(firebase.database());
+  }
+</script>
+        
+</body>
+
+</html>
