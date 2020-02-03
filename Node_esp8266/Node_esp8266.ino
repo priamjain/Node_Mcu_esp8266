@@ -9,8 +9,8 @@
 #include <ESP8266WebServer.h>
 #define LED_BUILTIN 2
 String fireStatus = ""; 
- #define FIREBASE_HOST "led-blink-0909.firebaseio.com"             
-#define FIREBASE_AUTH "OvI15RqPtxQIG3XzxFyyXK5XLH12QFf4WUWbpCF7"
+ #define FIREBASE_HOST "led-blink*************"             
+#define FIREBASE_AUTH "********************"
 int flag=0;
 String m_no;
 const char *ssid = "MyESP8266AP";
